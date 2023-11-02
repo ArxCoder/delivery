@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Калькулятор расчета доставки груза</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Создание калькулятора для сайта на чистом JS">
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+  <style type="text/css">
+    #out,.rub {
+    font-size: 30px;
+}
+  </style>
+</head>
+<body>
+    <!--Основной блок страницы-->
+  <section>
+    <div class="container pb-3 shadow rounded">
+      <div class="row">
+          <!--Заголовок страницы-->
+        <div class="col-lg-12">
+          <h1 class="text-center">Калькулятор расчета доставки груза</h1>
+        </div>
+        <!--Форма с заполнением данных-->
+          <div class="col-md-12">
+            <form>
+              <div class="row mb-3">
+                <!--Ввод значения веса-->
+                <div class="form-group col-md-6 col-sm-6">
+                  <p class="badge badge-warning">Вес (кг)</p>
+                  <input type="number" name="date" class="form-control" id="weight" required="" placeholder="1500" required="">
+                </div>
+                <!--Ввод объема груза-->
+                <div class="form-group col-md-6 col-sm-6">
+                  <p class="badge badge-warning">Объем (м³)</p>
+                  <input type="number" name="adress" id="vol" class="form-control" placeholder="2" required="">
+                </div>
+              </div>
+                <!--Первое дополнительное условие доставки-->
+              <div class="custom-control custom-checkbox row d-flex justify-content-center mb-3">
+                <div class="col-md-3" style="visibility: visible;">
+                  <input type="checkbox" id="load" name="mess" class="custom-control-input">
+                  <label class="custom-control-label" for="load">Нужна погрузка</label>
+                </div>
+                <!--Второе дополнительное условие доставки-->
+                <div class="col-md-3" style="visibility: visible;">
+                  <input type="checkbox" id="del" name="mess" class="custom-control-input">
+                  <label class="custom-control-label" for="del">Доставка до места</label>
+                </div>
+                <!--Третье дополнительное условие доставки-->
+                <div class="col-md-3" style="visibility: visible;">
+                  <input type="checkbox" id="frag" name="mess" class="custom-control-input">
+                  <label class="custom-control-label" for="frag">Хрупкий груз</label>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <!--Ввод расстояния для доставки груза-->
+                <div class="form-group col-md-12">
+                  <label for="range">Расстояние <span class="rasstoyanie">0</span> <span>км</span></label>
+                  <input type="range" class="custom-range" min="50" max="5000" step="50" id="range" value="500">
+                </div>
+                
+              </div>
+              <!--Вывод итогового значения-->
+              <div class="row col-12 mb-3"><span id="out">0</span> <span class="rub">₽</span></div>
+              <div class="row">
+                  <!--Кнопка для расчета стоимости доставки-->
+                  <div class="col-md-2 col-12">
+                    <input type="button" name="adress" id="btn" class="btn-block btn btn-primary" value="Считать">
+                  </div>
+                  <!--Кнопка для очистки полей-->
+                  <div class="col-md-2 col-12">
+                    <input type="button" name="adress" id="btn2" class="btn-block btn btn-primary" value="Очистить">
+                  </div>
+              </div>
+            </form>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+  <script src="js/script.js"></script>
+</body>
+</html>
